@@ -1,4 +1,5 @@
 import {useState, useEffect, useRef} from 'react';
+import { Link } from 'react-router-dom';
 import './comicsList.scss';
 import uw from '../../resources/img/UW.png';
 import xMen from '../../resources/img/x-men.png';
@@ -54,11 +55,11 @@ const ComicsList = (props) => {
                 <li 
                     className="comics__item"
                     key={item.id}>
-                        <a href="#">
+                        <Link to={`/comics/${item.id}`}>
                         <img src={item.thumbnail} alt={item.title} className="comics__item-img"/>
                         <div className="comics__item-name">{item.title}</div>
                         <div className="comics__item-price">{item.price}</div>
-                    </a>
+                    </Link>
                 </li>
             )
         });
